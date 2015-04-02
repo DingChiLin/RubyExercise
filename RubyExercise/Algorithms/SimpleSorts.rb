@@ -1,15 +1,30 @@
 class SelectionSort
-	def sort(arr)
-	
-		for i in 0...arr.length
-			for j in i+1...arr.length
-				puts "j=#{j}"
-				
 
+  def sort(arr)
+
+    tmpArr = arr.clone
+    for i in 0...arr.length
+      max = i
+      for j in i+1...arr.length
+        if tmpArr[j] > tmpArr[max]
+          max = j
+        end
 			end
+      exchange!(tmpArr,i,max)
 		end
 
+    tmpArr
+
 	end
+
+  private
+
+  def exchange!(arr,i,j)
+    tmp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = tmp
+  end
+
 end
 
 arr = []
@@ -19,4 +34,5 @@ ARGV.each do |arg|
 end
 
 ss = SelectionSort.new
-puts ss.sort(arr).inspect
+puts "original: " + arr.inspect
+puts "selection sort: " + ss.sort(arr).inspect
