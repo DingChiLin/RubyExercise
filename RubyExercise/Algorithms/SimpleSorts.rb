@@ -4,10 +4,10 @@ class SelectionSort
 
     tmpArr = arr.clone
 
-    for i in 0...arr.length
+    for i in 0...tmpArr.length
       max = i
 
-      for j in i+1...arr.length
+      for j in i+1...tmpArr.length
         if tmpArr[j] > tmpArr[max]
           max = j
         end
@@ -37,7 +37,7 @@ class InsertionSort
 
     tmpArr = arr.clone
 
-    for i in 0...arr.length
+    for i in 0...tmpArr.length
       tmpVar = tmpArr[i]
       j = i
       while j>0 && tmpArr[j-1] < tmpVar
@@ -52,6 +52,37 @@ class InsertionSort
   end
 
 end
+
+class BubbleSort
+  def sort(arr)
+    tmpArr = arr.clone
+
+    for i in 0...tmpArr.length
+
+      swapped = false
+      for j in 0...tmpArr.length-i-1
+        if tmpArr[j] < tmpArr[j+1]
+          exchange!(tmpArr,j,j+1)
+          swapped = true
+        end
+      end
+
+      if !swapped
+        break
+      end
+    end
+
+    tmpArr
+  end
+
+  def exchange!(arr,i,j)
+    tmp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = tmp
+  end
+
+end
+
 
 arr = []
 

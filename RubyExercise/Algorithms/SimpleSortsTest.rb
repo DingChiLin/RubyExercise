@@ -25,6 +25,13 @@ class TestSimpleSorts < Test::Unit::TestCase
     assert_equal actual,@expect
   end
 
+  def testBubbleSortsCanSortInputArrayProperly
+    ss = BubbleSort.new
+    actual = ss.sort(@testArr)
+    assert_equal actual,@expect
+  end
+
+
 end
 
 
