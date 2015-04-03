@@ -3,6 +3,7 @@ class SelectionSort
   def sort(arr)
 
     tmpArr = arr.clone
+
     for i in 0...arr.length
       max = i
 
