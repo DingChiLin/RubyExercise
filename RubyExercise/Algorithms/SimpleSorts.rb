@@ -10,7 +10,9 @@ class SelectionSort
           max = j
         end
 			end
-      exchange!(tmpArr,i,max)
+      if max != i
+        exchange!(tmpArr,i,max)
+      end
 		end
 
     tmpArr
