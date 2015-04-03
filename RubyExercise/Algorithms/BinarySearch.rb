@@ -14,7 +14,6 @@ class BinarySearch
 			else
 				return med
 			end
-				
 		end
 
 		return -1
