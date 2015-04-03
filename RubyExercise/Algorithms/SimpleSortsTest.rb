@@ -25,7 +25,6 @@ class TestSimpleSorts < Test::Unit::TestCase
     assert_equal actual,@expect
   end
 
-
 end
 
 
