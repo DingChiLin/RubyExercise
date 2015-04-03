@@ -5,12 +5,16 @@ class SelectionSort
     tmpArr = arr.clone
     for i in 0...arr.length
       max = i
+
       for j in i+1...arr.length
         if tmpArr[j] > tmpArr[max]
           max = j
         end
 			end
-      exchange!(tmpArr,i,max)
+
+      if max != i
+        exchange!(tmpArr,i,max)
+      end
 		end
 
     tmpArr
