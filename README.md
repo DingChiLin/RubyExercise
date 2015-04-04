@@ -1,2 +1,2 @@
-# RubyOnRailsExercise
-Ruby on Rails exercise files
+# RubyExercise
+Ruby exercise files
