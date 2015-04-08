@@ -19,8 +19,8 @@ class TestSimpleSorts < Test::Unit::TestCase
     actual1 = ci.count(@testArr1)
     actual2 = ci.count(@testArr2)
 
-    assert_equal actual1,@expect1
-    assert_equal actual2,@expect2
+    assert_equal @expect1,actual1
+    assert_equal @expect2,actual2
   end
 
 end

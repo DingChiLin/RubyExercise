@@ -18,32 +18,32 @@ class TestSimpleSorts < Test::Unit::TestCase
     ss = SelectionSort.new
     retain_arr = @testArr.clone
     actual = ss.sort(@testArr)
-    assert_equal actual,@expect
-    assert_equal retain_arr, @testArr
+    assert_equal @expect,actual
+    assert_equal @testArr,retain_arr
   end
 
   def testInsertionSortsCanSortInputArrayProperly
     ss = InsertionSort.new
     retain_arr = @testArr.clone
     actual = ss.sort(@testArr)
-    assert_equal actual,@expect
-    assert_equal retain_arr, @testArr
+    assert_equal @expect,actual
+    assert_equal @testArr,retain_arr
   end
 
   def testBubbleSortsCanSortInputArrayProperly
     ss = BubbleSort.new
     retain_arr = @testArr.clone
     actual = ss.sort(@testArr)
-    assert_equal actual,@expect
-    assert_equal retain_arr, @testArr
+    assert_equal @expect,actual
+    assert_equal @testArr,retain_arr
   end
 
   def testMergeSortsCanSortInputArrayProperly
     ss = MergeSort.new
     retain_arr = @testArr.clone
     actual = ss.sort(@testArr)
-    assert_equal actual,@expect
-    assert_equal retain_arr, @testArr
+    assert_equal @expect,actual
+    assert_equal @testArr,retain_arr
   end
 
 end

@@ -1,13 +1,17 @@
-arr = [1,2,3]
-puts arr[0..arr.length/2-1].inspect
-puts arr[arr.length/2..arr.length].inspect
+a = [5,6]
+b = [6,5]
 
-puts nil.to_i
-puts arr[3] == nil
+puts a.sort == b.sort
 
-arr2 = [4,5,6]
+c = [[1,2],[3,4]]
+d = [[3,4],[1,2]]
+e = [[1,3],[2,4]]
+f = [[2,4],[3,1]]
 
-puts arr.concat(arr2).inspect
+puts c.sort == d.sort
+puts d.sort == e.sort
 
-
+puts d.sort
+puts e.sort
+puts f.sort
 
