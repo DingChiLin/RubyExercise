@@ -19,14 +19,12 @@ class TestSimpleSorts < Test::Unit::TestCase
   end
 
   def testBruteForceWayToFindClosestPairProperly
-    puts @pairs.inspect
     cp = ClosestPairFinder.new
     actual = cp.bruteFind(@pairs)
     assert_equal @expect.sort,actual.sort
   end
 
   def testFastWayToFindClosestPairProperly
-    puts @pairs.inspect
     cp = ClosestPairFinder.new
     actual = cp.find(@pairs)
     assert_equal @expect.sort,actual.sort
