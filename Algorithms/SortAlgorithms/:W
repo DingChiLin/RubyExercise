@@ -1,0 +1,61 @@
+class QuickSort
+
+  def sort(arr)
+
+    tmpArr = arr.clone
+    sortByRange!(tmpArr,0,tmpArr.length-1)
+    tmpArr
+
+  end
+
+  def sortByRange!(arr,l,r)
+
+    puts "sortByRange" + l.to_s + " " + r.to_s
+    #1. find pivit point
+    p_index,p_value = findPivot(arr,l,r)
+
+    #2. change arr element order according to pivit point
+    p_d = reorder!(arr,p_index,p_value,l,r)
+    puts "p_d" + p_d.to_s
+
+    #3. resursive call
+    #if p_d-1 > l
+    #  sortByRange!(arr,l,p_d-1)
+    #end
+    if r > p_d+1
+      sortByRange!(arr,p_d+1,r)
+    end
+  end
+
+  def findPivot(arr,l,r)
+    return l, arr[l]
+  end
+
+  def reorder!(arr,p_index,p_value,l,r)
+
+    p_d = 1 # p_division
+    for i in l+1..r
+      if arr[i] < p_value
+
+        exchange!(arr,i,p_d)
+        p_d += 1
+      end
+    end
+
+    exchange!(arr,0,p_d-1)
+    p_d-1
+  end
+
+  def exchange!(arr,i,j)
+    tmp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = tmp
+  end
+
+end
+
+qs = QuickSort.new
+arr = [3,8,2,5,1,4,7,6]
+arr = qs.sort(arr)
+puts "reorder" + arr.inspect
+

@@ -1,6 +1,7 @@
 require 'test/unit'
 require './SimpleSorts'
 require './MergeSort'
+require './QuickSort'
 
 class TestSimpleSorts < Test::Unit::TestCase
 
@@ -10,8 +11,6 @@ class TestSimpleSorts < Test::Unit::TestCase
   end
 
   def teardown
-    @testArr = []
-    @expect = []
   end
 
   def testSelectionSortsCanSortInputArrayProperly
@@ -42,6 +41,14 @@ class TestSimpleSorts < Test::Unit::TestCase
     ss = MergeSort.new
     retain_arr = @testArr.clone
     actual = ss.sort(@testArr)
+    assert_equal @expect,actual
+    assert_equal @testArr,retain_arr
+  end
+
+  def testQuickSortsCanSortInputArrayProperly
+    qs = QuickSort.new
+    retain_arr = @testArr.clone
+    actual = qs.sort(@testArr)
     assert_equal @expect,actual
     assert_equal @testArr,retain_arr
   end
