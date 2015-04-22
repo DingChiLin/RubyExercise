@@ -1,7 +1,1 @@
-path = Dir["*.rb"]
-p path
-
-path.each do |p|
-  p
-end
-
+puts "This is a new feature"
