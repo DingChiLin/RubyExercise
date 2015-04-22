@@ -25,3 +25,21 @@ symbol = :foobar
 puts symbol
 puts symbol.object_id
 
+puts "???"
+
+class MyClass
+
+  def initialize(my)
+    @my = my
+  end
+
+  def say_hello
+    puts @my
+  end
+end
+
+my = MyClass.new(Arthur)
+my.say_hello
+
+
+
