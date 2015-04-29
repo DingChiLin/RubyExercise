@@ -55,9 +55,9 @@ class TestSimpleSorts < Test::Unit::TestCase
 
   def testDFScanFindThePathToWinComment
 
-    DFS.findWin(@node15)
-    #@expect = [OOJJ,OOHHDD]
-    #@actual = DFS.findWin(@node15)
-    #assert_equal @expect,@actual
+    @expect = ["JJOO","DDHHOO"].sort
+    @actual =  DFS.new.findSolution(@node15).sort
+    p @actual
+    assert_equal @expect,@actual
   end
 end

@@ -36,12 +36,34 @@ end
 
 class DFS
 
-  def self.findWin(node)
-    p "COMMENT!: " + node.comment
+  attr_accessor :answers
+
+  def initialize()
+    @answers = []
+  end
+
+  def findSolution(node)
+    find(node,"",0)
+    @answers
+  end
+
+  private
+
+  def find(node,pos,level)
+
+    pos = node.move.x+node.move.y + pos if level%2 == 1
+
+    if(node.children.length == 0)
+      @answers << pos if node.comment == "win"
+    end
+
+    node.children.each do |child|
+      find(child,pos,level+1)
+    end
+
   end
 
 end
-
 
 
 
